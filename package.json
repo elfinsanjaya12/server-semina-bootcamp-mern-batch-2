@@ -13,6 +13,7 @@
     "express": "~4.16.1",
     "http-status-codes": "^2.2.0",
     "mongoose": "^6.3.5",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1"
   }
 }
