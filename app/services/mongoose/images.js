@@ -11,7 +11,7 @@ const createImages = async (req) => {
   return result;
 };
 
-const getOneImage = async (id) => {
+const checkingImage = async (id) => {
   const result = await Images.findOne({ _id: id });
   console.log(result);
 
@@ -20,4 +20,4 @@ const getOneImage = async (id) => {
   return result;
 };
 
-module.exports = { createImages, getOneImage };
+module.exports = { createImages, checkingImage };

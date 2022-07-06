@@ -1,6 +1,6 @@
 // import model Talents
 const Talents = require('../../api/v1/talents/model');
-const { getOneImage } = require('./images');
+const { checkingImage } = require('./images');
 
 // import custom error not found dan bad request
 const { NotFoundError, BadRequestError } = require('../../errors');
@@ -28,7 +28,7 @@ const createTalents = async (req) => {
   const { name, role, image } = req.body;
 
   // cari image dengan field image
-  await getOneImage(image);
+  await checkingImage(image);
 
   // cari talents dengan field name
   const check = await Talents.findOne({ name });
@@ -62,7 +62,7 @@ const updateTalents = async (req) => {
   const { name, image, role } = req.body;
 
   // cari image dengan field image
-  await getOneImage(image);
+  await checkingImage(image);
 
   // cari talents dengan field name dan id selain dari yang dikirim dari params
   const check = await Talents.findOne({
@@ -101,10 +101,21 @@ const deleteTalents = async (req) => {
   return result;
 };
 
+const checkingTalents = async (id) => {
+  console.log(id);
+  const result = await Talents.findOne({ _id: id });
+
+  if (!result)
+    throw new NotFoundError(`Tidak ada pembicara dengan id :  ${id}`);
+
+  return result;
+};
+
 module.exports = {
   getAllTalents,
   createTalents,
   getOneTalents,
   updateTalents,
   deleteTalents,
+  checkingTalents,
 };
