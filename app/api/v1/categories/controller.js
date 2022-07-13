@@ -9,7 +9,7 @@ const {
 
 const { StatusCodes } = require('http-status-codes');
 
-const create = async (req, res) => {
+const create = async (req, res, next) => {
   try {
     const result = await createCategories(req);
 
@@ -21,7 +21,7 @@ const create = async (req, res) => {
   }
 };
 
-const index = async (req, res) => {
+const index = async (req, res, next) => {
   try {
     const result = await getAllCategories(req);
 
@@ -33,7 +33,7 @@ const index = async (req, res) => {
   }
 };
 
-const find = async (req, res) => {
+const find = async (req, res, next) => {
   try {
     const result = await getOneCategories(req);
 
@@ -45,7 +45,7 @@ const find = async (req, res) => {
   }
 };
 
-const update = async (req, res) => {
+const update = async (req, res, next) => {
   try {
     const result = await updateCategories(req);
 
@@ -57,7 +57,7 @@ const update = async (req, res) => {
   }
 };
 
-const destroy = async (req, res) => {
+const destroy = async (req, res, next) => {
   try {
     const result = await deleteCategories(req);
 
