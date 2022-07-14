@@ -1,0 +1,50 @@
+[
+  {
+    "_id": {
+      "$oid": "62cfe726d8940572a095e58f"
+    },
+    "name": "Shayna Putri",
+    "role": "Designer",
+    "image": {
+      "$oid": "62cfe6e9d8940572a095e58b"
+    },
+    "organizer": {
+      "$oid": "62cfe35e8ad11e7a5e240f26"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657792294537"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657792294537"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62cfe768d8940572a095e593"
+    },
+    "name": "Elfin Sanjaya",
+    "role": "FullStack",
+    "image": {
+      "$oid": "62cfe6e9d8940572a095e58b"
+    },
+    "organizer": {
+      "$oid": "62cfe35e8ad11e7a5e240f26"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657792360427"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657792360427"
+      }
+    },
+    "__v": 0
+  }
+]

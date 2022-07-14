@@ -1,0 +1,62 @@
+[
+  {
+    "_id": {
+      "$oid": "62cfe59890e64e9e644d3fb9"
+    },
+    "name": "Olahraga",
+    "organizer": {
+      "$oid": "62cfe35e8ad11e7a5e240f26"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657791896124"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657791896124"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62cfe5a790e64e9e644d3fbc"
+    },
+    "name": "Konser",
+    "organizer": {
+      "$oid": "62cfe35e8ad11e7a5e240f26"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657791911844"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657791911844"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62cfe5bd90e64e9e644d3fbf"
+    },
+    "name": "Seminar",
+    "organizer": {
+      "$oid": "62cfe35e8ad11e7a5e240f26"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657791933736"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657791933736"
+      }
+    },
+    "__v": 0
+  }
+]

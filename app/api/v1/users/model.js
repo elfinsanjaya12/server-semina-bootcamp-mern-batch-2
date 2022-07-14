@@ -25,6 +25,11 @@ const userSchema = new mongoose.Schema(
       enum: ['admin', 'organizer', 'owner'],
       default: 'admin',
     },
+    organizer: {
+      type: mongoose.Types.ObjectId,
+      ref: 'Organizer',
+      required: true,
+    },
   },
   { timestamps: true }
 );

@@ -1,0 +1,36 @@
+[
+  {
+    "_id": {
+      "$oid": "62cfe35e8ad11e7a5e240f26"
+    },
+    "organizer": "organizer 1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657791326058"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657791326058"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62cfe3728ad11e7a5e240f2a"
+    },
+    "organizer": "owner 1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657791346443"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657791346443"
+      }
+    },
+    "__v": 0
+  }
+]

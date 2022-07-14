@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "62cfeacaa7c00d1978e1530f"
+  },
+  "title": "UI & UX",
+  "date": {
+    "$date": {
+      "$numberLong": "1657070174000"
+    }
+  },
+  "about": "Most realtors and investors are using Social Media (Facebook and Google) ineffectively because they don't know what they're doing or to start. They spend hours and hours trying different things and getting nowhere. This makes them feel like giving up on marketing altogether.",
+  "tagline": "Start Your Design Career With Design Sprint",
+  "keyPoint": [
+    "Hours trying different things and getting nowhere makes them feel like giving up on marketing altogether."
+  ],
+  "venueName": "Lampung",
+  "statusEvent": "Published",
+  "tickets": [
+    {
+      "type": "Presale 2 Ticket",
+      "price": 10000,
+      "stock": 290,
+      "statusTicketCategories": false,
+      "_id": {
+        "$oid": "62cfeacaa7c00d1978e15310"
+      }
+    },
+    {
+      "type": "Presale 1 Ticket",
+      "price": 7300,
+      "stock": 150,
+      "statusTicketCategories": true,
+      "_id": {
+        "$oid": "62cfeacaa7c00d1978e15311"
+      }
+    }
+  ],
+  "image": {
+    "$oid": "62cfea14e8fed983d5c3a4e7"
+  },
+  "category": {
+    "$oid": "62cfe5bd90e64e9e644d3fbf"
+  },
+  "talent": {
+    "$oid": "62cfe726d8940572a095e58f"
+  },
+  "organizer": {
+    "$oid": "62cfe35e8ad11e7a5e240f26"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1657793226727"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1657793226727"
+    }
+  },
+  "__v": 0
+}]

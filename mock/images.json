@@ -1,0 +1,36 @@
+[
+  {
+    "_id": {
+      "$oid": "62cfe6e9d8940572a095e58b"
+    },
+    "name": "uploads/50483253-default.jpeg",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657792233832"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657792233832"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "62cfea14e8fed983d5c3a4e7"
+    },
+    "name": "uploads/52157125-1.png",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657793044829"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657793044829"
+      }
+    },
+    "__v": 0
+  }
+]
