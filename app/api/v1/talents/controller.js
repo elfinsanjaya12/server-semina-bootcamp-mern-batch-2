@@ -1,4 +1,3 @@
-// import services categories
 const {
   getAllTalents,
   getOneTalents,
