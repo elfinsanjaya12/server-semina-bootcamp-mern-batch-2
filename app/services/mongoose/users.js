@@ -24,7 +24,7 @@ const createOrganizer = async (req) => {
   return users;
 };
 
-const createUsers = async (req) => {
+const createUsers = async (req, res) => {
   const { name, password, role, confirmPassword, email } = req.body;
 
   if (password !== confirmPassword) {

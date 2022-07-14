@@ -11,6 +11,7 @@ let talentSchema = Schema(
       type: String,
       default: '-',
     },
+
     image: {
       type: mongoose.Types.ObjectId,
       ref: 'Image',

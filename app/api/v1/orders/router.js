@@ -9,7 +9,7 @@ const {
 router.get(
   '/orders',
   authenticateUser,
-  authorizeRoles('organizer', 'admin'),
+  authorizeRoles('organizer', 'admin', 'owner'),
   index
 );
 

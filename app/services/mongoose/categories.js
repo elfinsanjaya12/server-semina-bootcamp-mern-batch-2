@@ -12,7 +12,10 @@ const createCategories = async (req) => {
   const { name } = req.body;
 
   // cari categories dengan field name
-  const check = await Categories.findOne({ name });
+  const check = await Categories.findOne({
+    name,
+    organizer: req.user.organizer,
+  });
 
   // apa bila check true / data categories sudah ada maka kita tampilkan error bad request dengan message kategori nama duplikat
   if (check) throw new BadRequestError('kategori nama duplikat');
