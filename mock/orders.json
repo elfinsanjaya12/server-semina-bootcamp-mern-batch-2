@@ -1,89 +1,186 @@
-[{
-  "_id": {
-    "$oid": "6222882126f7cc72f30ea0df"
-  },
-  "date": {
-    "$date": {
-      "$numberLong": "1657670400000"
-    }
-  },
-  "personalDetail": {
-    "firstName": "ega",
-    "lastName": "liayando",
-    "email": "egaliyando@gmail.com",
-    "role": "designer"
-  },
-  "event": {
-    "$oid": "62cfeacaa7c00d1978e1530f"
-  },
-  "totalPay": 10000,
-  "totalOrderTicket": 1,
-  "orderItems": [
-    {
-      "ticketCategories": {
-        "type": "Presale 2 Ticket",
-        "price": 10000
+[
+  {
+    "_id": {
+      "$oid": "6222882126f7cc72f30ea0df"
+    },
+    "date": {
+      "$date": {
+        "$numberLong": "1657670400000"
+      }
+    },
+    "personalDetail": {
+      "firstName": "ega",
+      "lastName": "liayando",
+      "email": "egaliyando@gmail.com",
+      "role": "designer"
+    },
+    "event": {
+      "$oid": "62cfeacaa7c00d1978e1530f"
+    },
+    "totalPay": 10000,
+    "totalOrderTicket": 1,
+    "orderItems": [
+      {
+        "ticketCategories": {
+          "type": "Presale 2 Ticket",
+          "price": 10000
+        },
+        "sumTicket": 1
+      }
+    ],
+    "participant": {
+      "$oid": "623ebb89b3e202071335910b"
+    },
+    "historyEvent": {
+      "title": "UI & UX",
+      "date": {
+        "$date": {
+          "$numberLong": "1657070174000"
+        }
       },
-      "sumTicket": 1
-    }
-  ],
-  "participant": {
-    "$oid": "623ebb89b3e202071335910b"
-  },
-  "payment": "623eb95b15919466fa3b53b2",
-  "createdAt": {
-    "$date": {
-      "$numberLong": "0"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "0"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6222882126f7cc72f30ea0da"
-  },
-  "date": {
-    "$date": {
-      "$numberLong": "1657756800000"
-    }
-  },
-  "personalDetail": {
-    "firstName": "ega",
-    "lastName": "liayando",
-    "email": "egaliyando@gmail.com",
-    "role": "designer"
-  },
-  "event": {
-    "$oid": "62cfeacaa7c00d1978e1530f"
-  },
-  "totalPay": 20000,
-  "totalOrderTicket": 2,
-  "orderItems": [
-    {
-      "ticketCategories": {
-        "type": "Presale 2 Ticket",
-        "price": 10000
+      "about": "Most realtors and investors are using Social Media (Facebook and Google) ineffectively because they don't know what they're doing or to start. They spend hours and hours trying different things and getting nowhere. This makes them feel like giving up on marketing altogether.",
+      "tagline": "Start Your Design Career With Design Sprint",
+      "keyPoint": [
+        "Hours trying different things and getting nowhere makes them feel like giving up on marketing altogether."
+      ],
+      "venueName": "Lampung",
+      "statusEvent": "Published",
+      "tickets": [
+        {
+          "type": "Presale 2 Ticket",
+          "price": 10000,
+          "stock": 290,
+          "statusTicketCategories": false,
+          "_id": {
+            "$oid": "62cfeacaa7c00d1978e15310"
+          }
+        },
+        {
+          "type": "Presale 1 Ticket",
+          "price": 7300,
+          "stock": 150,
+          "statusTicketCategories": true,
+          "_id": {
+            "$oid": "62cfeacaa7c00d1978e15311"
+          }
+        }
+      ],
+      "image": {
+        "$oid": "62cfea14e8fed983d5c3a4e7"
       },
-      "sumTicket": 2
-    }
-  ],
-  "participant": {
-    "$oid": "623ebb89b3e202071335910b"
+      "category": {
+        "$oid": "62cfe5bd90e64e9e644d3fbf"
+      },
+      "talent": {
+        "$oid": "62cfe726d8940572a095e58f"
+      },
+      "organizer": {
+        "$oid": "62cfe35e8ad11e7a5e240f26"
+      }
+    },
+    "payment": "623eb95b15919466fa3b53b2",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "0"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "0"
+      }
+    },
+    "__v": 0
   },
-  "payment": "623eb95b15919466fa3b53b2",
-  "createdAt": {
-    "$date": {
-      "$numberLong": "0"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "0"
-    }
-  },
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "6222882126f7cc72f30ea0da"
+    },
+    "date": {
+      "$date": {
+        "$numberLong": "1657756800000"
+      }
+    },
+    "personalDetail": {
+      "firstName": "ega",
+      "lastName": "liayando",
+      "email": "egaliyando@gmail.com",
+      "role": "designer"
+    },
+    "event": {
+      "$oid": "62cfeacaa7c00d1978e1530f"
+    },
+    "totalPay": 20000,
+    "totalOrderTicket": 2,
+    "orderItems": [
+      {
+        "ticketCategories": {
+          "type": "Presale 2 Ticket",
+          "price": 10000
+        },
+        "sumTicket": 2
+      }
+    ],
+    "participant": {
+      "$oid": "623ebb89b3e202071335910b"
+    },
+    "historyEvent": {
+      "title": "UI & UX",
+      "date": {
+        "$date": {
+          "$numberLong": "1657070174000"
+        }
+      },
+      "about": "Most realtors and investors are using Social Media (Facebook and Google) ineffectively because they don't know what they're doing or to start. They spend hours and hours trying different things and getting nowhere. This makes them feel like giving up on marketing altogether.",
+      "tagline": "Start Your Design Career With Design Sprint",
+      "keyPoint": [
+        "Hours trying different things and getting nowhere makes them feel like giving up on marketing altogether."
+      ],
+      "venueName": "Lampung",
+      "statusEvent": "Published",
+      "tickets": [
+        {
+          "type": "Presale 2 Ticket",
+          "price": 10000,
+          "stock": 290,
+          "statusTicketCategories": false,
+          "_id": {
+            "$oid": "62cfeacaa7c00d1978e15310"
+          }
+        },
+        {
+          "type": "Presale 1 Ticket",
+          "price": 7300,
+          "stock": 150,
+          "statusTicketCategories": true,
+          "_id": {
+            "$oid": "62cfeacaa7c00d1978e15311"
+          }
+        }
+      ],
+      "image": {
+        "$oid": "62cfea14e8fed983d5c3a4e7"
+      },
+      "category": {
+        "$oid": "62cfe5bd90e64e9e644d3fbf"
+      },
+      "talent": {
+        "$oid": "62cfe726d8940572a095e58f"
+      },
+      "organizer": {
+        "$oid": "62cfe35e8ad11e7a5e240f26"
+      }
+    },
+    "payment": "623eb95b15919466fa3b53b2",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "0"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "0"
+      }
+    },
+    "__v": 0
+  }
+]
