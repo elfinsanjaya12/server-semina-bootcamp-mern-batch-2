@@ -31,6 +31,7 @@ const authenticateUser = async (req, res, next) => {
     next(error);
   }
 };
+
 const authenticateParticipant = async (req, res, next) => {
   try {
     let token;
@@ -48,12 +49,11 @@ const authenticateParticipant = async (req, res, next) => {
     const payload = isTokenValid({ token });
 
     // Attach the user and his permissions to the req object
-    req.user = {
+    req.participant = {
       email: payload.email,
-      role: payload.role,
-      name: payload.name,
-      organizer: payload.organizer,
-      id: payload.userId,
+      lastName: payload.lastName,
+      firstName: payload.firstName,
+      id: payload.participantId,
     };
 
     next();

@@ -8,6 +8,7 @@ const {
   getDetailLandingPage,
   getDashboard,
 } = require('./controller');
+
 const { authenticateParticipant } = require('../../../middlewares/auth');
 
 router.post('/auth/signup', signup);

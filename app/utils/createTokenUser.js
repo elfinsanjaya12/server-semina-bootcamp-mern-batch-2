@@ -7,13 +7,13 @@ const createTokenUser = (user) => {
     organizer: user.organizer,
   };
 };
-const createTokenParticipant = (user) => {
+
+const createTokenParticipant = (participant) => {
   return {
-    lastName: user.lastName,
-    participantId: user._id,
-    firstName: user.firstName,
-    email: user.email,
-    type: 'participant',
+    lastName: participant.lastName,
+    participantId: participant._id,
+    firstName: participant.firstName,
+    email: participant.email,
   };
 };
 

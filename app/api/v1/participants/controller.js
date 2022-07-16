@@ -14,7 +14,7 @@ const signup = async (req, res, next) => {
     const result = await signupParticipant(req);
 
     res.status(StatusCodes.CREATED).json({
-      data: { token: result },
+      data: result,
     });
   } catch (err) {
     next(err);
@@ -26,7 +26,7 @@ const activeParticipant = async (req, res, next) => {
     const result = await activateParticipant(req);
 
     res.status(StatusCodes.OK).json({
-      data: { token: result },
+      data: result,
     });
   } catch (err) {
     next(err);
@@ -56,6 +56,7 @@ const getAllLandingPage = async (req, res, next) => {
     next(err);
   }
 };
+
 const getDashboard = async (req, res, next) => {
   try {
     const result = await getAllOrders(req);

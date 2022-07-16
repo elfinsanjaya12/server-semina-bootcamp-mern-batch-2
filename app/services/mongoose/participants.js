@@ -1,18 +1,20 @@
 const Participant = require('../../api/v1/participants/model');
 const Events = require('../../api/v1/events/model');
 const Orders = require('../../api/v1/orders/model');
-const { otpMail } = require('../mail');
+
 const {
   BadRequestError,
   NotFoundError,
   UnauthorizedError,
 } = require('../../errors');
+const { createTokenParticipant, createJWT } = require('../../utils');
 
-const { createTokenUser, createJWT } = require('../../utils');
+const { otpMail } = require('../mail');
 
 const signupParticipant = async (req) => {
   const { firstName, lastName, email, password, role } = req.body;
 
+  // jika email dan status tidak aktif
   let result = await Participant.findOne({
     email,
     status: 'tidak aktif',
@@ -38,6 +40,9 @@ const signupParticipant = async (req) => {
   }
   await otpMail(email, result);
 
+  delete result._doc.password;
+  delete result._doc.otp;
+
   return result;
 };
 
@@ -51,9 +56,15 @@ const activateParticipant = async (req) => {
 
   if (check && check.otp !== otp) throw new BadRequestError('Kode otp salah');
 
-  const result = await Participant.findByIdAndUpdate(check._id, {
-    status: 'aktif',
-  });
+  const result = await Participant.findByIdAndUpdate(
+    check._id,
+    {
+      status: 'aktif',
+    },
+    { new: true }
+  );
+
+  delete result._doc.password;
 
   return result;
 };
@@ -81,7 +92,7 @@ const signinParticipant = async (req) => {
     throw new UnauthorizedError('Invalid Credentials');
   }
 
-  const token = createJWT({ payload: createTokenUser(result, 'participant') });
+  const token = createJWT({ payload: createTokenParticipant(result) });
 
   return token;
 };
@@ -96,16 +107,20 @@ const getAllEvents = async (req) => {
 };
 
 const getOneEvent = async (req) => {
-  const result = await Events.findOne({ _id: req.params.id })
+  const { id } = req.params;
+  const result = await Events.findOne({ _id: id })
     .populate('category')
     .populate('talent')
     .populate('image');
+
+  if (!result) throw new NotFoundError(`Tidak ada acara dengan id :  ${id}`);
 
   return result;
 };
 
 const getAllOrders = async (req) => {
-  const result = await Orders.find({ participant: req.user.id });
+  console.log(req.participant);
+  const result = await Orders.find({ participant: req.participant.id });
   return result;
 };
 
