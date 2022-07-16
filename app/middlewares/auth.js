@@ -31,6 +31,36 @@ const authenticateUser = async (req, res, next) => {
     next(error);
   }
 };
+const authenticateParticipant = async (req, res, next) => {
+  try {
+    let token;
+    // check header
+    const authHeader = req.headers.authorization;
+
+    if (authHeader && authHeader.startsWith('Bearer')) {
+      token = authHeader.split(' ')[1];
+    }
+
+    if (!token) {
+      throw new UnauthenticatedError('Authentication invalid');
+    }
+
+    const payload = isTokenValid({ token });
+
+    // Attach the user and his permissions to the req object
+    req.user = {
+      email: payload.email,
+      role: payload.role,
+      name: payload.name,
+      organizer: payload.organizer,
+      id: payload.userId,
+    };
+
+    next();
+  } catch (error) {
+    next(error);
+  }
+};
 
 const authorizeRoles = (...roles) => {
   return (req, res, next) => {
@@ -41,4 +71,4 @@ const authorizeRoles = (...roles) => {
   };
 };
 
-module.exports = { authenticateUser, authorizeRoles };
+module.exports = { authenticateUser, authorizeRoles, authenticateParticipant };

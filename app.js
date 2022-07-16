@@ -13,6 +13,7 @@ const eventsRouter = require('./app/api/v1/events/router');
 const organizersRouter = require('./app/api/v1/organizers/router');
 const authCMSRouter = require('./app/api/v1/auth/router');
 const ordersRouter = require('./app/api/v1/orders/router');
+const participantsRouter = require('./app/api/v1/participants/router');
 
 // middlewares
 const notFoundMiddleware = require('./app/middlewares/not-found');
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
   });
 });
 
+app.use('/api/v1', participantsRouter);
 app.use(v1, categoriesRouter);
 app.use(v1, imagesRouter);
 app.use(v1, talentsRouter);
