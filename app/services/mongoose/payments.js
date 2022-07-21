@@ -74,7 +74,7 @@ const updatePayments = async (req) => {
   );
 
   if (!result)
-    throw new NotFoundError(`Tidak ada pembicara dengan id :  ${id}`);
+    throw new NotFoundError(`Tidak ada tipe pembayaran dengan id :  ${id}`);
 
   return result;
 };
