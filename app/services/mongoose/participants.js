@@ -1,6 +1,7 @@
 const Participant = require('../../api/v1/participants/model');
 const Events = require('../../api/v1/events/model');
 const Orders = require('../../api/v1/orders/model');
+const Payments = require('../../api/v1/payments/model');
 
 const {
   BadRequestError,
@@ -119,8 +120,72 @@ const getOneEvent = async (req) => {
 };
 
 const getAllOrders = async (req) => {
-  console.log(req.participant);
   const result = await Orders.find({ participant: req.participant.id });
+  return result;
+};
+
+const checkoutOrder = async (req) => {
+  const { event, personalDetail, payment, tickets } = req.body;
+
+  const checkingEvent = await Events.findOne({ _id: event });
+  if (!checkingEvent) {
+    throw new NotFoundError('Tidak ada acara dengan id : ' + event);
+  }
+
+  const checkingPayment = await Payments.findOne({ _id: payment });
+
+  if (!checkingPayment) {
+    throw new NotFoundError(
+      'Tidak ada metode pembayaran dengan id :' + payment
+    );
+  }
+
+  let totalPay = 0,
+    totalOrderTicket = 0;
+  await tickets.forEach((tic) => {
+    checkingEvent.tickets.forEach((ticket) => {
+      if (tic.ticketCategories.type === ticket.type) {
+        if (tic.sumTicket > ticket.stock) {
+          throw new NotFoundError('Stock event tidak mencukupi');
+        } else {
+          ticket.stock = ticket.stock -= tic.sumTicket;
+
+          totalOrderTicket += tic.sumTicket;
+          totalPay += tic.ticketCategories.price * tic.sumTicket;
+        }
+      }
+    });
+  });
+
+  await checkingEvent.save();
+
+  const historyEvent = {
+    title: checkingEvent.title,
+    date: checkingEvent.date,
+    about: checkingEvent.about,
+    tagline: checkingEvent.tagline,
+    keyPoint: checkingEvent.keyPoint,
+    venueName: checkingEvent.venueName,
+    tickets: tickets,
+    image: checkingEvent.image,
+    category: checkingEvent.category,
+    talent: checkingEvent.talent,
+    organizer: checkingEvent.organizer,
+  };
+
+  const result = new Orders({
+    date: new Date(),
+    personalDetail: personalDetail,
+    totalPay,
+    totalOrderTicket,
+    orderItems: tickets,
+    participant: req.participant.id,
+    event,
+    historyEvent,
+    payment,
+  });
+
+  await result.save();
   return result;
 };
 
@@ -131,4 +196,5 @@ module.exports = {
   getAllEvents,
   getOneEvent,
   getAllOrders,
+  checkoutOrder,
 };
