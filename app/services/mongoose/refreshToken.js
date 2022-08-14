@@ -9,7 +9,7 @@ const createUserRefreshToken = async (payload) => {
 };
 
 const getUserRefreshToken = async (req) => {
-  const { refreshToken } = req.body;
+  const { refreshToken } = req.params;
   const result = await UserRefreshToken.findOne({
     refreshToken,
   });

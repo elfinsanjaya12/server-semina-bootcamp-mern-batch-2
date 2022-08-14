@@ -6,8 +6,8 @@ const {
   authorizeRoles,
 } = require('../../../middlewares/auth');
 
-router.post(
-  '/refresh-token',
+router.get(
+  '/refresh-token/:refreshToken',
   // authenticateUser,
   // authorizeRoles('organizer', 'admin', 'owner'),
   index
