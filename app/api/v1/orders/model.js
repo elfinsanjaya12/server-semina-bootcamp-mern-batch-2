@@ -101,10 +101,6 @@ const orderSchema = new mongoose.Schema(
         required: [true, 'Tempat acara harus diisi'],
       },
 
-      tickets: {
-        type: [],
-        required: true,
-      },
       image: {
         type: mongoose.Types.ObjectId,
         ref: 'Image',

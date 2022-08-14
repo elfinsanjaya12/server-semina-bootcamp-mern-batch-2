@@ -120,6 +120,7 @@ const getOneEvent = async (req) => {
 };
 
 const getAllOrders = async (req) => {
+  console.log(req.participant);
   const result = await Orders.find({ participant: req.participant.id });
   return result;
 };
@@ -152,7 +153,7 @@ const checkoutOrder = async (req) => {
         if (tic.sumTicket > ticket.stock) {
           throw new NotFoundError('Stock event tidak mencukupi');
         } else {
-          ticket.stock = ticket.stock -= tic.sumTicket;
+          ticket.stock -= tic.sumTicket;
 
           totalOrderTicket += tic.sumTicket;
           totalPay += tic.ticketCategories.price * tic.sumTicket;

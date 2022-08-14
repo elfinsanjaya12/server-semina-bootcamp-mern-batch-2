@@ -81,6 +81,7 @@ const getDetailLandingPage = async (req, res, next) => {
     next(err);
   }
 };
+
 const checkout = async (req, res, next) => {
   try {
     const result = await checkoutOrder(req);
