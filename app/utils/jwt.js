@@ -20,9 +20,12 @@ const createRefreshJWT = ({ payload }) => {
 };
 
 const isTokenValid = ({ token }) => jwt.verify(token, jwtSecret);
+const isTokenValidRefreshToken = ({ token }) =>
+  jwt.verify(token, jwtRefreshTokenSecret);
 
 module.exports = {
   createJWT,
   isTokenValid,
   createRefreshJWT,
+  isTokenValidRefreshToken,
 };

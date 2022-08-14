@@ -1,5 +1,9 @@
 const UserRefreshToken = require('../../api/v1/userRefreshToken/model');
-const { isTokenValid, createJWT, createTokenUser } = require('../../utils');
+const {
+  isTokenValidRefreshToken,
+  createJWT,
+  createTokenUser,
+} = require('../../utils');
 const Users = require('../../api/v1/users/model');
 
 const createUserRefreshToken = async (payload) => {
@@ -14,7 +18,7 @@ const getUserRefreshToken = async (req) => {
     refreshToken,
   });
 
-  const payload = isTokenValid({ token: result.refreshToken });
+  const payload = isTokenValidRefreshToken({ token: result.refreshToken });
 
   const userCheck = await Users.findOne({ email: payload.email });
 
