@@ -5,6 +5,7 @@ const {
   createTokenUser,
 } = require('../../utils');
 const Users = require('../../api/v1/users/model');
+const { NotFoundError } = require('../../errors');
 
 const createUserRefreshToken = async (payload) => {
   const result = await UserRefreshToken.create(payload);
@@ -17,6 +18,8 @@ const getUserRefreshToken = async (req) => {
   const result = await UserRefreshToken.findOne({
     refreshToken,
   });
+
+  if (!result) throw new NotFoundError(`refreshToken tidak valid `);
 
   const payload = isTokenValidRefreshToken({ token: result.refreshToken });
 
